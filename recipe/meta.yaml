@@ -10,17 +10,16 @@ source:
   sha256: 9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - hatchling
     - pip
   run:
-    - python >={{ python_min }}
+    - python
     - typing_extensions >=4.12.0
 
 test:
@@ -30,7 +29,6 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
 
 about:
   summary: Runtime typing introspection tools
