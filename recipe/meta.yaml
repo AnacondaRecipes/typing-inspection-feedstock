@@ -12,6 +12,7 @@ source:
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
+  skip: true   #[py<39]
 
 requirements:
   host:
@@ -25,16 +26,27 @@ requirements:
 test:
   imports:
     - typing_inspection
+  source_files:
+    - tests/*
   commands:
     - pip check
+    - pytest . -v
   requires:
     - pip
+    - pytest
 
 about:
   summary: Runtime typing introspection tools
   home: https://github.com/pydantic/typing-inspection
   license: MIT
   license_file: LICENSE
+  license_family: MIT
+  description: |
+    A collection of runtime typing introspection tools, including a
+    `typing_inspect` module that provides a consistent interface for
+    inspecting types across different Python versions.
+  doc_url: https://typing-inspection.readthedocs.io/en/latest/
+  dev_url:
 
 extra:
   recipe-maintainers:
