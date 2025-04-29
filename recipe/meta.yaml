@@ -45,8 +45,8 @@ about:
     A collection of runtime typing introspection tools, including a
     `typing_inspect` module that provides a consistent interface for
     inspecting types across different Python versions.
-  doc_url: https://typing-inspection.readthedocs.io/en/latest/
-  dev_url:
+  doc_url: https://typing-inspection.readthedocs.io/
+  dev_url: https://github.com/pydantic/typing-inspection
 
 extra:
   recipe-maintainers:
