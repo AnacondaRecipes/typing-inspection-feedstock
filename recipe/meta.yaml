@@ -1,5 +1,5 @@
 {% set name = "typing-inspection" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-','_') }}-{{ version }}.tar.gz
-  sha256: ba561c48a67c5958007083d386c3295464928b01faa735ab8547c5692e87f464
+  sha256: c5f9ec1530b5c1e2c9bc34a84d9a3466ed1b2f3f2fa9f901368d9c5596210e4d
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
-  skip: true   #[py<39]
+  skip: true  # [py<310]
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python
-    - typing_extensions >=4.12.0
+    - typing_extensions >=4.15.0
 
 test:
   imports:
